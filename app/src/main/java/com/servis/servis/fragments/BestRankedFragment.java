@@ -1,7 +1,6 @@
 package com.servis.servis.fragments;
 
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,7 +11,6 @@ import com.servis.servis.R;
 
 /**
  * A simple {@link Fragment} subclass.
- *
  */
 public class BestRankedFragment extends Fragment {
 
