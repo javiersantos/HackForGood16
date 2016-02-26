@@ -22,13 +22,15 @@ public class LoginActivity extends AppCompatActivity {
         login_twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, CreateActivity.class));
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                finish();
             }
         });
         login_facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, CreateActivity.class));
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                finish();
             }
         });
     }
