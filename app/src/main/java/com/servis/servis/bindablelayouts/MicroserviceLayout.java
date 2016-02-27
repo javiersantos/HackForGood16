@@ -3,6 +3,7 @@ package com.servis.servis.bindablelayouts;
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.servis.servis.R;
@@ -10,6 +11,7 @@ import com.servis.servis.models.Microservice;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.nlopez.smartadapters.views.BindableRelativeLayout;
 
 /**
@@ -27,6 +29,8 @@ public class MicroserviceLayout extends BindableRelativeLayout<Microservice> {
     TextView mTvPrice;
     @Bind(R.id.ratingBar)
     RatingBar ratingBar;
+    @Bind(R.id.rlContent)
+    RelativeLayout rlContent;
 
     public MicroserviceLayout(Context context) {
         super(context);
@@ -45,10 +49,18 @@ public class MicroserviceLayout extends BindableRelativeLayout<Microservice> {
 
     @Override
     public void bind(Microservice microservice) {
+
+
+
         mIvMicroService.setImageDrawable(microservice.getImage());
         mTvTitle.setText(microservice.getTitle());
         mTvUser.setText(microservice.getUser());
         mTvPrice.setText(String.valueOf(microservice.getPrice())+"€/hora");
         ratingBar.setRating(microservice.getRating().floatValue());
+    }
+
+    @OnClick(R.id.rlContent)
+    public void onClickContent(){
+        notifyItemAction(1);
     }
 }
