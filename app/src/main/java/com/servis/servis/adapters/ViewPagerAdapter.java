@@ -1,4 +1,4 @@
-package com.servis.servis.fragments;
+package com.servis.servis.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

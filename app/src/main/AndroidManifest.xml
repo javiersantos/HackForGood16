@@ -10,7 +10,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".activities.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -20,14 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name" />
-
         <activity
             android:name=".activities.CreateActivity"
             android:label="Crear microservicio en Servis" />
+        <activity
+            android:name=".activities.DetailsActivity"
+            android:label="Detalles"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
