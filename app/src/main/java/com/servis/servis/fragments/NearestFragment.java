@@ -1,17 +1,20 @@
 package com.servis.servis.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.servis.servis.R;
+import com.servis.servis.activities.DetailsActivity;
 import com.servis.servis.bindablelayouts.MicroserviceLayout;
 import com.servis.servis.models.Microservice;
 
@@ -22,6 +25,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.nlopez.smartadapters.SmartAdapter;
+import io.nlopez.smartadapters.utils.ViewEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,9 +65,18 @@ public class NearestFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         mRecyclerViewNearest.setLayoutManager(layoutManager);
 
+        ViewEventListener listenerLayout = new ViewEventListener<Microservice>() {
+            @Override
+            public void onViewEvent(int i, Microservice o, int i1, View view) {
+                Intent toDetails = new Intent(getActivity(), DetailsActivity.class);
+                startActivity(toDetails);
+            }
+        };
+
 
         SmartAdapter.items(getFicticialItems())
                 .map(Microservice.class, MicroserviceLayout.class)
+                .listener(listenerLayout)
                 .into(mRecyclerViewNearest); //add listener
     }
 
