@@ -70,7 +70,7 @@ public class NearestFragment extends Fragment {
 
     private List<Microservice> getFicticialItems(){
 
-        Microservice m1 = new Microservice("Carpinteria", "Av. Reina Mercedes", 2.5, 10., "Aqui descripción", "Pedro Llamas", ContextCompat.getDrawable(getContext(), R.drawable.carpinteria));
+        Microservice m1 = new Microservice("Clases de Android Studio", "Av. Reina Mercedes", 4.5, 10., "Aqui descripción", "Javier Santos", ContextCompat.getDrawable(getContext(), R.drawable.bg_details));
         Microservice m2 = new Microservice("Clases Particulares", "Av. La Palmera", 4., 11., "Aqui descripcion", "Antonio Burguillos", ContextCompat.getDrawable(getContext(), R.drawable.clases));
         Microservice m3 = new Microservice("Limpieza", "Calle Torneo", 5., 9., "Aqui descripcion", "Jesús Pineda", ContextCompat.getDrawable(getContext(), R.drawable.limpiar));
 
